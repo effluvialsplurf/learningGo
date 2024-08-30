@@ -5,6 +5,6 @@ import (
 )
 
 
-funct main() {
+func main() {
   fmt.Println("Finally, a git project AND a hello world file :)")
 }
