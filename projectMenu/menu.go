@@ -38,7 +38,7 @@ func menuListener(key keys.Key) (stop bool, err error) {
 }
 
 func main() {
-	availablePrograms := [1]string{"snakeGame"}
+	availablePrograms := []string{"snakeGame"}
 
 	fmt.Println("Select the option youd like to try!")
 
