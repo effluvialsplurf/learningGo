@@ -42,8 +42,8 @@ func main() {
 
 	fmt.Println("Select the option youd like to try!")
 
-	for i := 0; i < len(availablePrograms); i++ {
-		fmt.Printf("Press: %v for %v\n", i+1, availablePrograms[i])
+	for i, v := range availablePrograms {
+		fmt.Printf("Press: %v for %v\n", i+1, v)
 	}
 
 	keyboard.Listen(menuListener)
