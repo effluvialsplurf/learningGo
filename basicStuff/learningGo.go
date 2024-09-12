@@ -62,5 +62,6 @@ func main() {
 	//GrowSlice(slice2, str2)
 	//fmt.Println(slice2)
 	//
-	MakePeople()
+	//MakePeople()
+	//
 }
