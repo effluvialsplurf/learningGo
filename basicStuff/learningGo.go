@@ -48,4 +48,19 @@ func main() {
 	//fmt.Println(MakePerson("Jesus", "Christ", 22))
 	//fmt.Println(MakePersonPointer("Joseph", "Smith", 28))
 	//
+	//slice1 := []string{"I", "like", "dogs"}
+	//str1 := "cats"
+	//
+	//slice2 := []string{"I", "hate", "baby"}
+	//str2 := "geese"
+	//
+	//fmt.Println(slice1)
+	//UpdateSlice(slice1, str1)
+	//fmt.Println(slice1)
+	//
+	//fmt.Println(slice2)
+	//GrowSlice(slice2, str2)
+	//fmt.Println(slice2)
+	//
+	MakePeople()
 }
