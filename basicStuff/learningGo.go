@@ -44,4 +44,8 @@ func main() {
 	//helloPrefix := prefixer("Hello")
 	//fmt.Println(helloPrefix("Bob"))
 	//fmt.Println(helloPrefix("Maria"))
+	//
+	//fmt.Println(MakePerson("Jesus", "Christ", 22))
+	//fmt.Println(MakePersonPointer("Joseph", "Smith", 28))
+	//
 }
