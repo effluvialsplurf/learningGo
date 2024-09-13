@@ -20,20 +20,15 @@ func (l *League) MatchResult(name1, name2 string, score1, score2 int) {
 }
 
 func (l League) Ranking() []string {
-	sortedMap := make(map[string]int)
-	for name, score := range l.Wins {
-		sortedMap[name] = score
+	sortedKeys := make([]string, 0, len(l.Wins))
+
+	for key := range l.Wins {
+		sortedKeys = append(sortedKeys, key)
 	}
 
-	sortKeys := make([]string, 0, len(sortedMap))
-
-	for key := range sortedMap {
-		sortKeys = append(sortKeys, key)
-	}
-
-	sort.SliceStable(sortKeys, func(i, j int) bool {
-		return sortedMap[sortKeys[i]] > sortedMap[sortKeys[j]]
+	sort.SliceStable(sortedKeys, func(i, j int) bool {
+		return l.Wins[sortedKeys[i]] > l.Wins[sortedKeys[j]]
 	})
 
-	return sortKeys
+	return sortedKeys
 }
