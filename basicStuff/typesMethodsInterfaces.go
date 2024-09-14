@@ -1,6 +1,7 @@
 package main
 
 import (
+	"io"
 	"sort"
 )
 
@@ -31,4 +32,14 @@ func (l League) Ranking() []string {
 	})
 
 	return sortedKeys
+}
+
+type Ranker interface {
+	Ranking() []string
+}
+
+func RankPrinter(r Ranker, wrt io.Writer) {
+	for _, team := range r.Ranking() {
+		wrt.Write([]byte(team + "\n"))
+	}
 }

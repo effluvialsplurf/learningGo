@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 func exploringStructs() {
@@ -85,4 +86,6 @@ func main() {
 
 	fmt.Println(NFL.Ranking())
 	fmt.Println(NBA.Ranking())
+
+	RankPrinter(NFL, os.Stdout)
 }
