@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
 func exploringStructs() {
@@ -65,27 +64,28 @@ func main() {
 	//
 	//MakePeople()
 	//
-	var lions Team
-	lions.Name = "Lions"
-	lions.PlayerNames = []string{"Goff", "Williams"}
-
-	var babys Team
-	babys.Name = "Babys"
-	babys.PlayerNames = []string{"Bill", "SmallMan"}
-
-	var NFL League
-	var NBA League
-
-	NFL.Teams = []Team{lions, babys}
-	NFL.Wins = make(map[string]int)
-	NBA.Teams = []Team{lions, babys}
-	NBA.Wins = make(map[string]int)
-
-	NFL.MatchResult(lions.Name, babys.Name, 10, 15)
-	NBA.MatchResult(lions.Name, babys.Name, 8, 4)
-
-	fmt.Println(NFL.Ranking())
-	fmt.Println(NBA.Ranking())
-
-	RankPrinter(NFL, os.Stdout)
+	//var lions Team
+	//lions.Name = "Lions"
+	//lions.PlayerNames = []string{"Goff", "Williams"}
+	//
+	//var babys Team
+	//babys.Name = "Babys"
+	//babys.PlayerNames = []string{"Bill", "SmallMan"}
+	//
+	//var NFL League
+	//var NBA League
+	//
+	//NFL.Teams = []Team{lions, babys}
+	//NFL.Wins = make(map[string]int)
+	//NBA.Teams = []Team{lions, babys}
+	//NBA.Wins = make(map[string]int)
+	//
+	//NFL.MatchResult(lions.Name, babys.Name, 10, 15)
+	//NBA.MatchResult(lions.Name, babys.Name, 8, 4)
+	//
+	//fmt.Println(NFL.Ranking())
+	//fmt.Println(NBA.Ranking())
+	//
+	//RankPrinter(NFL, os.Stdout)
+	//
 }
