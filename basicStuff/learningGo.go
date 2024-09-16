@@ -88,4 +88,16 @@ func main() {
 	//
 	//RankPrinter(NFL, os.Stdout)
 	//
+	x := 5
+	y := 7.5
+	double(&x)
+	double(&y)
+	fmt.Println(x)
+	fmt.Println(y)
+
+	var step2_0 PrintInt = 8008
+	var step2_1 PrintFloat = 8008.5
+
+	TryPrint(step2_0)
+	TryPrint(step2_1)
 }
