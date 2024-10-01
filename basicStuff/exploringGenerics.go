@@ -45,6 +45,16 @@ type List[T comparable] struct {
 	Tail *Node[T]
 }
 
+func (l *List[T]) PrintList() {
+	n := l.Head
+	count := 0
+	for n != nil {
+		fmt.Printf("Value: %v, Position: %v \n", n.Value, count)
+		count++
+		n = n.Next
+	}
+}
+
 func (l *List[T]) Add(t T) {
 	n := &Node[T]{
 		Value: t,
@@ -57,4 +67,47 @@ func (l *List[T]) Add(t T) {
 	}
 	l.Tail.Next = n
 	l.Tail = l.Tail.Next
+}
+
+func (l *List[T]) Insert(t T, pos int) {
+	newNode := &Node[T]{
+		Value: t,
+	}
+
+	var prev *Node[T]
+	var n *Node[T]
+
+	for i := range pos + 1 {
+
+		if i == 0 {
+			n = l.Head
+		}
+
+		if i == pos-1 {
+			prev = n
+		}
+
+		if i == pos {
+			fmt.Printf("new: %v, prev: %v, curr: %v \n", newNode.Value, prev.Value, n.Value)
+			newNode.Next = n
+			prev.Next = newNode
+		}
+
+		n = n.Next
+	}
+}
+
+func (l *List[T]) Index(t T) int {
+	n := l.Head
+
+	idx := 0
+	for n != nil {
+		if n.Value == t {
+			return idx
+		}
+		n = n.Next
+		idx++
+	}
+
+	return -1
 }

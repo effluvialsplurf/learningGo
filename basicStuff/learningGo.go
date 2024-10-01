@@ -88,16 +88,33 @@ func main() {
 	//
 	//RankPrinter(NFL, os.Stdout)
 	//
-	x := 5
-	y := 7.5
-	double(&x)
-	double(&y)
-	fmt.Println(x)
-	fmt.Println(y)
-
-	var step2_0 PrintInt = 8008
-	var step2_1 PrintFloat = 8008.5
-
-	TryPrint(step2_0)
-	TryPrint(step2_1)
+	//x := 5
+	//y := 7.5
+	//double(&x)
+	//double(&y)
+	//fmt.Println(x)
+	//fmt.Println(y)
+	//
+	//var step2_0 PrintInt = 8008
+	//var step2_1 PrintFloat = 8008.5
+	//
+	//TryPrint(step2_0)
+	//TryPrint(step2_1)
+	//
+	//linky := List[int]{
+	//	Head: nil,
+	//	Tail: nil,
+	//}
+	//for range 15 {
+	//	val := rand.IntN(100)
+	//	linky.Add(val)
+	//}
+	//
+	//linky.PrintList()
+	//
+	//linky.Insert(69, 9)
+	//
+	//linky.PrintList()
+	//
+	//fmt.Printf("69 is at pos: %v \n", linky.Index(69))
 }
