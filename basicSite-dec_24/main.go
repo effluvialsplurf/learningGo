@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 	"text/template"
 )
@@ -23,8 +22,7 @@ func buildHandler(fn func(http.ResponseWriter, *http.Request, *template.Template
 
 // TODO: I want to be able to render a template based on the request parsed via regex
 func statucPageHandler(w http.ResponseWriter, r *http.Request, t *template.Template) {
-	fmt.Printf("r.URL.Path: %v\n", r.URL.Path)
-	t.ExecuteTemplate(w, r.URL.Path[1:]+".html", nil)
+	t.ExecuteTemplate(w, r.URL.Path[1:]+".html", nil) // we have to remove the leading slash from the path
 }
 
 // server initialization, creates the mux and adds our handlers
