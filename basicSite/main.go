@@ -1,10 +1,12 @@
 package main
 
 import (
+	"io/fs"
 	"net/http"
 	"text/template"
 
 	"basicSite/pages"
+	"basicSite/viteapp"
 )
 
 // TODO: handler functions
@@ -20,10 +22,20 @@ func staticPageHandler(w http.ResponseWriter, r *http.Request, t *template.Templ
 	t.ExecuteTemplate(w, r.URL.Path[1:]+".html", nil) // we have to remove the leading slash from the path
 }
 
+func appHandler(w http.ResponseWriter, r *http.Request) {
+	apDir, err := fs.Sub(viteapp.App, "canvasGames/dist")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	http.StripPrefix("/app/", http.FileServerFS(apDir)).ServeHTTP(w, r)
+}
+
 // server initialization, creates the mux and adds our handlers
 func serverInit() *http.ServeMux {
 	mux := http.NewServeMux()
 
+	mux.HandleFunc("/app/", appHandler)
 	mux.HandleFunc("/", buildHandler(staticPageHandler))
 
 	return mux
